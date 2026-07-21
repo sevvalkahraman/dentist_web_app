@@ -677,7 +677,10 @@ textarea {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
+/* Only collapse the navigation when it can no longer fit comfortably. */
+@media (max-width: 720px) {
   .nav-inner {
     height: 64px;
     flex-wrap: nowrap;
