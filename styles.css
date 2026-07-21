@@ -627,6 +627,36 @@ textarea {
   padding-top: 1rem;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(47, 111, 237, 0.62);
+  color: white;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.72;
+  backdrop-filter: blur(6px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--primary);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
 .page-section {
   padding: 3rem 0 5rem;
 }
@@ -791,5 +821,18 @@ textarea {
 
   .hero-copy h1 {
     overflow-wrap: anywhere;
+  }
+
+  .back-to-top {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
   }
 }
