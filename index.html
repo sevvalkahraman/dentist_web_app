@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Taşkın Özcan Diş Kliniği için modern ve kullanıcı dostu web sitesi."
+    />
+    <title>Taşkın Özcan | Diş Kliniği</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="navbar">
+        <div class="container nav-inner">
+          <a href="#top" class="brand">Taşkın Özcan</a>
+          <div class="nav-actions">
+            <div class="nav-links">
+              <a href="#hakkimizda" class="nav-link">Hakkımızda</a>
+              <a href="#hizmetler" class="nav-link">Tedaviler</a>
+              <a href="#randevu" class="nav-link">Randevu</a>
+              <a href="#iletisim" class="nav-link">İletişim</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <div class="lang-switcher" aria-label="Dil seçici">
+                <button class="lang-btn active" type="button">TR</button>
+                <button class="lang-btn" type="button">EN</button>
+              </div>
+              <div class="avatar-wrapper">
+                <img src="assets/doctor.jpg" alt="Dr. Taşkın Özcan" class="avatar" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow">Modern Diş Hekimliği Deneyimi</p>
+          <h1>Gülüşünüzü güvenle yeniden inşa ediyoruz.</h1>
+          <p>
+            Estetik, çocuk diş hekimliği, implant ve diş tedavileri için modern
+            yaklaşımla hizmet veriyoruz.
+          </p>
+          <div class="hero-actions">
+            <a href="#randevu" class="btn btn-primary">Randevu Al</a>
+            <a href="#iletisim" class="btn btn-secondary">İletişim</a>
+          </div>
+          <ul class="hero-highlights">
+            <li>✔ Hızlı randevu takvimi</li>
+            <li>✔ Konforlu ve hijyenik ortam</li>
+            <li>✔ Kişiye özel tedavi planları</li>
+          </ul>
+        </div>
+
+        <div class="hero-card" aria-label="klinik bilgileri kartı">
+          <div class="hero-card-content">
+            <div class="card-badge">Yeni Hasta Kabulü</div>
+            <h3>Bugün randevu alın</h3>
+            <p>Telefon veya online form ile hızlıca rezervasyon yapabilirsiniz.</p>
+            <div class="card-info">
+              <span>📞 0 212 555 12 34</span>
+              <span>✉️ info@taskinozcan.com</span>
+            </div>
+          </div>
+          <!-- Tooth graphic positioned to the right of the card content -->
+          <img class="hero-tooth" src="assets/tooth.png" alt="" aria-hidden="true" />
+        </div>
+      </section>
+    </header>
+
+    <main class="container page-section">
+      <section class="content-panel" id="hakkimizda">
+        <div class="panel-header">
+          <p class="eyebrow">Hakkımızda</p>
+          <h2>Hasta odaklı, güvenli ve modern tedavi yaklaşımı</h2>
+        </div>
+        <div class="page-grid">
+          <article class="feature-card">
+            <h3>Deneyim</h3>
+            <p>Yıllara dayanan klinik deneyimi ile güvenilir yaklaşım.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Teknoloji</h3>
+            <p>Güncel tanı yöntemleri ve modern cihazlarla tedavi.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Hasta Odaklı</h3>
+            <p>Hastanın ihtiyaçlarına göre özelleştirilmiş planlar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-panel" id="hizmetler">
+        <div class="panel-header">
+          <p class="eyebrow">Tedaviler</p>
+          <h2>Çözüme hazır tedavi seçeneklerimiz</h2>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Estetik Diş Hekimliği</h3>
+            <p>Lamine, beyazlatma ve gülüş tasarımı hizmetleri.</p>
+          </article>
+          <article class="service-card">
+            <h3>İmplant Tedavileri</h3>
+            <p>Fonksiyon ve estetiği birlikte sağlayan implant çözümleri.</p>
+          </article>
+          <article class="service-card">
+            <h3>Çocuk Diş Hekimliği</h3>
+            <p>Çocuklara özel, sakin ve güven veren bakım.</p>
+          </article>
+          <article class="service-card">
+            <h3>Ortodonti</h3>
+            <p>Düzenli ve doğru diş yapısı için tedavi seçenekleri.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-panel" id="blog">
+        <div class="panel-header">
+          <p class="eyebrow">Sıkça Sorulan Sorular</p>
+          <h2>Diş tedavileriyle ilgili merak edilenler</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Randevu ne kadar sürede veriliyor?</h3>
+            <p>Genellikle hafta içi kısa sürede uygun tarih ve saat bilgisi paylaşılır.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Estetik diş tedavileri ağrılı mıdır?</h3>
+            <p>Hastaya özel lokal anestezi uygulanarak işlem sırasında rahatsızlık minimum seviyeye indirilir.</p>
+          </article>
+          <article class="faq-item">
+            <h3>İmplant tedavisi için uygun aday kimlerdir?</h3>
+            <p>Genel sağlık durumu uygun olan ve yeterli kemik yapısı bulunan hastalar implant tedavisi için değerlendirilebilir.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Çocuklara diş tedavisi yapılmalı mı?</h3>
+            <p>Evet, erken yaşta yapılan koruyucu bakım çocukların ileriki yıllarda daha sağlıklı dişlere sahip olmasını destekler.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-panel" id="randevu">
+        <div class="panel-header">
+          <p class="eyebrow">Randevu</p>
+          <h2>Randevu almak için formu doldurun</h2>
+        </div>
+        <div class="form-grid">
+          <p class="form-note">Randevu talepleriniz kayıt altına alınır; daha sonra sizinle iletişime geçilir.</p>
+          <form id="appointment-form" class="card-form">
+            <label>
+              Adınız Soyadınız
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Telefon
+              <input type="tel" name="phone" required />
+            </label>
+            <label>
+              Hizmet
+              <select name="service" required>
+                <option value="">Seçiniz</option>
+                <option>Estetik Diş Hekimliği</option>
+                <option>İmplant</option>
+                <option>Çocuk Diş Hekimliği</option>
+                <option>Ortodonti</option>
+              </select>
+            </label>
+            <label>
+              Tercih Ettiğiniz Tarih
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              Notunuz
+              <textarea name="note" rows="4"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Randevu Talebi Gönder</button>
+            <p id="appointment-status" class="form-status" aria-live="polite"></p>
+          </form>
+
+          
+        </div>
+      </section>
+
+      <section class="content-panel" id="iletisim">
+        <div class="panel-header">
+          <p class="eyebrow">İletişim</p>
+          <h2>Mesaj bırakın, size dönebiliriz.</h2>
+        </div>
+        <div class="form-grid">
+          <form id="contact-form" class="card-form">
+            <label>
+              Adınız
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              E-posta
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Konu
+              <input type="text" name="subject" required />
+            </label>
+            <label>
+              Mesajınız
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-secondary">Mesaj Gönder</button>
+            <p id="contact-status" class="form-status" aria-live="polite"></p>
+          </form>
+
+          <div class="info-panel">
+            <h3>İletişim Bilgileri</h3>
+            <p>
+              <span class="contact-icon phone" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.9.37 1.77.73 2.59a2 2 0 0 1-.45 2.11L8.91 9.91a16 16 0 0 0 6 6l1.49-1.49a2 2 0 0 1 2.11-.45c.82.36 1.69.61 2.59.73A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <strong>Telefon:</strong> 0 212 555 12 34
+            </p>
+            <p>
+              <span class="contact-icon email" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8.5l-9 6-9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <strong>E-posta:</strong>
+              <a href="mailto:info@taskinozcan.com">info@taskinozcan.com</a>
+            </p>
+            <p>
+              <span class="contact-icon address" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>
+              </span>
+              <strong>Adres:</strong> 81, Ergenekon, Halaskargazi Cd., 34373 Şişli/İstanbul
+            </p>
+            <p>
+              <span class="contact-icon clock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <strong>Çalışma Saatleri:</strong> Pazartesi - Cuma, 09:00 - 19:00
+            </p>
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps?q=81%20Ergenekon%20Halaskargazi%20Cd.%2034373%20%C5%9Ei%C5%9Fli%20%C4%B0stanbul&z=14&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                title="Kliniğin konumu"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© 2026 Taşkın Özcan. Tüm hakları saklıdır.</p>
+        <a href="#" data-section="home">Başa dön</a>
+      </div>
+    </footer>
+  </body>
+</html>

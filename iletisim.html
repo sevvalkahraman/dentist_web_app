@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim | Taşkın Özcan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar container">
+        <a href="index.html" class="brand">Taşkın Özcan</a>
+        <div class="nav-links">
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="hizmetler.html">Hizmetler</a>
+          <a href="randevu.html">Randevu</a>
+          <a href="iletisim.html">İletişim</a>
+        </div>
+      </nav>
+
+      <section class="container page-hero">
+        <p class="eyebrow">İletişim</p>
+        <h1 class="page-heading">Mesaj bırakın, size döneLim.</h1>
+        <p class="page-intro">
+          Sorularınız, görüşleriniz ve randevu talepleriniz için bizimle iletişime geçebilirsiniz.
+        </p>
+      </section>
+    </header>
+
+    <main class="container page-section">
+      <div class="form-grid">
+        <form id="contact-form" class="card-form">
+          <label>
+            Adınız
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            E-posta
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Konu
+            <input type="text" name="subject" required />
+          </label>
+          <label>
+            Mesajınız
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-secondary">Mesaj Gönder</button>
+          <p id="contact-status" class="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="info-panel">
+          <h3>İletişim Bilgileri</h3>
+          <p>Telefon: 0 212 555 12 34</p>
+          <p>E-posta: info@taskinozcan.com</p>
+          <p>Adres: Merkez Mahallesi, No: 12, İstanbul</p>
+          <p>Çalışma Saatleri: Pazartesi - Cuma, 09:00 - 19:00</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© 2026 Taşkın Özcan. Tüm hakları saklıdır.</p>
+        <a href="index.html">Başa dön</a>
+      </div>
+    </footer>
+  </body>
+</html>

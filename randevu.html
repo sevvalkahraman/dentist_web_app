@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Randevu | Taşkın Özcan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar container">
+        <a href="index.html" class="brand">Taşkın Özcan</a>
+        <div class="nav-links">
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="hizmetler.html">Hizmetler</a>
+          <a href="randevu.html">Randevu</a>
+          <a href="iletisim.html">İletişim</a>
+        </div>
+      </nav>
+
+      <section class="container page-hero">
+        <p class="eyebrow">Randevu</p>
+        <h1 class="page-heading">Randevu almak için formu doldurun</h1>
+        <p class="page-intro">
+          Taleplerinizi iletin, en kısa sürede size dönüş yapalım.
+        </p>
+      </section>
+    </header>
+
+    <main class="container page-section">
+      <div class="form-grid">
+        <form id="appointment-form" class="card-form">
+          <label>
+            Adınız Soyadınız
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Telefon
+            <input type="tel" name="phone" required />
+          </label>
+          <label>
+            Hizmet
+            <select name="service" required>
+              <option value="">Seçiniz</option>
+              <option>Estetik Diş Hekimliği</option>
+              <option>İmplant</option>
+              <option>Çocuk Diş Hekimliği</option>
+              <option>Ortodonti</option>
+            </select>
+          </label>
+          <label>
+            Tercih Ettiğiniz Tarih
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            Notunuz
+            <textarea name="note" rows="4"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Randevu Talebi Gönder</button>
+          <p id="appointment-status" class="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="info-panel">
+          <h3>Hızlı erişim</h3>
+          <p>Randevu talepleriniz kayıt altına alınır; daha sonra sizinle iletişime geçilir.</p>
+          <ul>
+            <li>📅 En kısa sürede dönüş</li>
+            <li>🩺 Önceden görüşme ve planlama</li>
+            <li>📍 Merkez konum</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© 2026 Taşkın Özcan. Tüm hakları saklıdır.</p>
+        <a href="index.html">Başa dön</a>
+      </div>
+    </footer>
+  </body>
+</html>

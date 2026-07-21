@@ -1,0 +1,667 @@
+:root {
+  --bg: #f5f8ff;
+  --surface: #ffffff;
+  --surface-2: #eef5ff;
+  --primary: #2f6fed;
+  --primary-dark: #1a4fb8;
+  --accent: #13b3a3;
+  --text: #162033;
+  --muted: #60708a;
+  --border: #dfe9fb;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #f9fcff 0%, var(--bg) 100%);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(47, 111, 237, 0.18), transparent 38%),
+    linear-gradient(135deg, #ffffff 0%, #f3f8ff 100%);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+  box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+  transition: background 180ms ease, box-shadow 180ms ease;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  height: 64px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.2rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.nav-btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 0 6rem;
+}
+
+/* Reserve space inside the hero so fixed navbar doesn't overlap content */
+.hero {
+  padding-top: 80px;
+}
+
+/* ensure hero is a positioning context so the decorative tooth can be placed relative to it */
+.hero {
+  position: relative;
+}
+
+/* subtle left gradient to visually tie the decorative tooth into the hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(47,111,237,0.06) 0%, rgba(47,111,237,0.02) 18%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.hero-tooth {
+  position: absolute;
+  left: 2%;
+  top: 14%;
+  width: 320px;
+  height: auto;
+  opacity: 0.42;
+  transform: rotate(6deg) scale(0.9);
+  pointer-events: none;
+  transition: transform 600ms ease, opacity 500ms ease;
+  filter: drop-shadow(-12px 14px 30px rgba(47,111,237,0.05));
+  z-index: 1;
+  mix-blend-mode: normal;
+}
+
+/* hide or reduce on smaller screens */
+@media (max-width: 900px) {
+  .hero-tooth { display: none; }
+}
+
+/* when scrolled past hero, fade out and move slightly up */
+.hero-tooth.faded {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95) rotate(-6deg);
+}
+
+/* make sure content sits above the decorative tooth */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.hero-copy p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(47, 111, 237, 0.18);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 12px 25px rgba(45, 108, 223, 0.2);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.hero-highlights {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.hero-card,
+.card-form,
+.info-panel,
+.service-card,
+.about-grid article,
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  position: relative;
+  overflow: visible;
+}
+
+.hero-card-content {
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-card .hero-tooth {
+  width: 180px;
+  height: auto;
+  opacity: 0.6;
+  transform: rotate(4deg) scale(0.98);
+  pointer-events: none;
+  filter: drop-shadow(-8px 10px 22px rgba(47,111,237,0.06));
+  z-index: 1;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero-card { flex-direction: column; align-items: flex-start; }
+  .hero-card .hero-tooth { display: none; }
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-grid article,
+.service-card,
+.info-panel {
+  padding: 1.25rem;
+}
+
+.map-wrapper {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  min-height: 260px;
+  border: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, #f9fcff 0%, #f1f6ff 100%);
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  padding: 1.2rem;
+}
+
+.page-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 10px 28px rgba(47,111,237,0.18);
+  transform: translateY(-2px);
+  animation: navPulse 900ms ease;
+}
+
+@keyframes navPulse {
+  0% { box-shadow: 0 6px 20px rgba(47,111,237,0.12); transform: translateY(0) scale(1); }
+  50% { box-shadow: 0 14px 36px rgba(47,111,237,0.18); transform: translateY(-2px) scale(1.02); }
+  100% { box-shadow: 0 10px 28px rgba(47,111,237,0.16); transform: translateY(-1px) scale(1.01); }
+}
+
+.avatar-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary) !important;
+}
+
+.info-panel p {
+  margin: 0.6rem 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.info-panel p a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+.contact-icon svg *,
+.contact-icon svg path,
+.contact-icon svg circle,
+.contact-icon svg rect {
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+/* Plain text block used in the appointment section (no card/box) */
+.plain-text {
+  padding: 0;
+  margin: 0.2rem 0 0 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Note displayed inside the appointment form */
+.form-note {
+  margin: 0 0 1rem 0;
+  color: var(--muted);
+  font-weight: 600;
+  background: transparent;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.content-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 1.75rem;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.25rem;
+  scroll-margin-top: 100px;
+}
+
+.panel-header {
+  margin-bottom: 1.25rem;
+}
+
+.service-card h3,
+.info-panel h3,
+.about-grid h3,
+.feature-card h3 {
+  margin-top: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.2rem;
+}
+
+/* When the right column is empty (as in Randevu), make the grid single-column so the form fills the space */
+#randevu .form-grid {
+  grid-template-columns: 1fr;
+}
+
+#randevu .card-form {
+  width: 100%;
+}
+
+.card-form {
+  padding: 1.5rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  background: #fbfdff;
+}
+
+/* Larger, clearer form fields inside the Randevu section */
+#randevu .card-form {
+  padding: 2rem;
+}
+
+#randevu .card-form label {
+  font-size: 0.95rem;
+  gap: 0.5rem;
+}
+
+#randevu .card-form input,
+#randevu .card-form select,
+#randevu .card-form textarea {
+  padding: 1.05rem 1.1rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  min-height: 52px;
+}
+
+#randevu .card-form textarea {
+  min-height: 120px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-status {
+  min-height: 1.2rem;
+  margin-top: 0.8rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.footer {
+  padding: 1.5rem 0 2rem;
+  color: var(--muted);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.page-section {
+  padding: 3rem 0 5rem;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f6faff 100%);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+  padding: 1.35rem;
+}
+
+.link-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.page-hero {
+  padding: 3rem 0 1rem;
+}
+
+.page-heading {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0.2rem 0 0.7rem;
+}
+
+.page-intro {
+  color: var(--muted);
+  max-width: 700px;
+}
+
+@media (max-width: 900px) {
+  .hero-content,
+  .about,
+  .form-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 640px) {
+  .navbar,
+  .nav-links,
+  .nav-actions,
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 0.6rem;
+    margin-top: 0.7rem;
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
