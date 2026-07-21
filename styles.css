@@ -69,11 +69,18 @@ a {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
   height: 64px;
+  flex-wrap: wrap;
+  gap: 0.85rem;
 }
 
 .brand {
   font-weight: 800;
   font-size: 1.2rem;
+}
+
+.nav-links {
+  flex: 1 1 auto;
+  justify-content: flex-start;
 }
 
 .nav-actions {
@@ -641,6 +648,21 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-inner {
+    height: auto;
+  }
 }
 
 @media (max-width: 640px) {
