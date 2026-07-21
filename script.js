@@ -2,6 +2,16 @@ const appointmentForm = document.getElementById('appointment-form');
 const contactForm = document.getElementById('contact-form');
 const navLinks = document.querySelectorAll('.nav-link');
 const langButtons = document.querySelectorAll('.lang-btn');
+const menuToggle = document.querySelector('.menu-toggle');
+const navActions = document.querySelector('.nav-actions');
+
+if (menuToggle && navActions) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navActions.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menüyü kapat' : 'Menüyü aç');
+  });
+}
 
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -11,6 +21,9 @@ navLinks.forEach((link) => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    navActions?.classList.remove('is-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Menüyü aç');
   });
 });
 

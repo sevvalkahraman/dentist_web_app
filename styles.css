@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -87,6 +89,31 @@ a {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 5px 0;
+  border-radius: 2px;
+  background: var(--text);
 }
 
 .nav-links {
@@ -543,6 +570,9 @@ label {
 input,
 select,
 textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
   border: 1px solid var(--border);
   border-radius: 0.9rem;
   padding: 0.85rem 1rem;
@@ -649,58 +679,114 @@ textarea {
   }
 
   .nav-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 0.65rem;
-    height: auto;
-    padding: 0.75rem 0;
+    height: 64px;
+    flex-wrap: nowrap;
   }
 
-  .nav-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 0;
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
   }
 
   .nav-actions {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
     width: 100%;
-    display: flex;
+    padding: 0.85rem 1rem 1rem;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .nav-actions.is-open {
+    display: block;
+  }
+
+  .nav-actions .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .nav-link {
+    min-width: 0;
+    padding: 0.65rem 0.5rem;
+  }
+
+  .nav-tools {
     justify-content: space-between;
+    margin-top: 0.75rem;
+  }
+
+  /* Keep the navigation on the standalone pages on one clean row. */
+  nav.navbar.container {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 0.75rem;
+    height: 64px;
+    overflow: hidden;
+  }
+
+  nav.navbar.container > .brand {
+    flex: 0 0 auto;
+  }
+
+  nav.navbar.container > .nav-links {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    min-width: 0;
+    margin-left: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav.navbar.container > .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav.navbar.container > .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 640px) {
-  .navbar,
-  .nav-links,
-  .nav-actions,
   .footer-content {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .nav-links {
-    gap: 0.6rem;
-    margin-top: 0.7rem;
-    justify-content: center;
+  .container {
+    width: min(100% - 1.25rem, 1120px);
   }
 
-  .nav-actions {
-    justify-content: space-between;
+  .hero {
+    padding-top: 64px;
   }
 
   .hero-content {
-    padding-top: 2rem;
+    padding: 2rem 0 3.5rem;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-panel,
+  .hero-card,
+  .card-form,
+  #randevu .card-form {
+    padding: 1rem;
+  }
+
+  .hero-copy h1 {
+    overflow-wrap: anywhere;
   }
 }
